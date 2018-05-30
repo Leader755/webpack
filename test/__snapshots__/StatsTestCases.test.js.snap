@@ -2063,52 +2063,49 @@ Child
 `;
 
 exports[`StatsTestCases should print correct stats for side-effects-issue-7428 1`] = `
-"Hash: 9d82ff1a0201e9c2ffa4
+"Hash: 3820b12fcca2168af8bc
 Time: Xms
 Built at: Thu Jan 01 1970 00:00:00 GMT
   Asset       Size  Chunks             Chunk Names
-   0.js  481 bytes       0  [emitted]  
-main.js   9.31 KiB       1  [emitted]  main
+   0.js  599 bytes       0  [emitted]  
+main.js   9.54 KiB       1  [emitted]  main
 Entrypoint main = main.js
-[0] ./components/src/CompAB/utils.js 97 bytes {1} [built]
-    harmony side effect evaluation ./utils [1] ./main.js + 1 modules 1:0-30
-    harmony import specifier ./utils [1] ./main.js + 1 modules 5:2-5
-    harmony side effect evaluation ./utils [4] ./components/src/CompAB/CompA.js 1:0-35
-    harmony import specifier ./utils [4] ./components/src/CompAB/CompA.js 5:5-12
-[1] ./main.js + 1 modules 231 bytes {1} [built]
-    single entry ./main.js  main
-    | ./main.js 144 bytes [built]
-    |     single entry ./main.js  main
-    | ./components/src/CompAB/CompB.js 77 bytes [built]
-    |     [only some exports used: default]
-    |     harmony import specifier ./components  ./main.js 4:15-20 (skipped side-effect-free modules)
-    |     harmony side effect evaluation ./CompB [7] ./components/src/CompAB/index.js 2:0-43
-    |     harmony export imported specifier ./CompB [7] ./components/src/CompAB/index.js 2:0-43
-[2] ./components/src/index.js 84 bytes [built]
-    [no exports used]
-    harmony side effect evaluation ./components [1] ./main.js + 1 modules 1:0-44
-    harmony side effect evaluation ./components [3] ./foo.js 1:0-37
-[3] ./foo.js 101 bytes {0} [built]
-    import() ./foo  ./main.js 6:0-15
-[4] ./components/src/CompAB/CompA.js 89 bytes {1} [built]
+[0] ./components/src/CompAB/CompB.js 77 bytes {1} [built]
     [only some exports used: default]
-    harmony import specifier ./components  ./main.js 3:15-20 (skipped side-effect-free modules)
-    harmony import specifier ./components [3] ./foo.js 3:20-25 (skipped side-effect-free modules)
-    harmony side effect evaluation ./CompA [7] ./components/src/CompAB/index.js 1:0-43
-    harmony export imported specifier ./CompA [7] ./components/src/CompAB/index.js 1:0-43
-[5] ./components/src/CompC/CompC.js 33 bytes [built]
+    harmony side effect evaluation ./CompB [3] ./foo.js + 2 modules 2:0-43
+    harmony export imported specifier ./CompB [3] ./foo.js + 2 modules 2:0-43
+    harmony import specifier ./components [5] ./main.js 4:15-20 (skipped side-effect-free modules)
+[1] ./components/src/CompAB/utils.js 97 bytes {1} [built]
+    harmony side effect evaluation ./utils [0] ./components/src/CompAB/CompB.js 1:0-30
+    harmony import specifier ./utils [0] ./components/src/CompAB/CompB.js 5:2-5
+    harmony side effect evaluation ./utils [2] ./components/src/CompAB/CompA.js 1:0-35
+    harmony import specifier ./utils [2] ./components/src/CompAB/CompA.js 5:5-12
+[2] ./components/src/CompAB/CompA.js 89 bytes {1} [built]
+    [only some exports used: default]
+    harmony side effect evaluation ./CompA [3] ./foo.js + 2 modules 1:0-43
+    harmony export imported specifier ./CompA [3] ./foo.js + 2 modules 1:0-43
+    harmony import specifier ./components [5] ./main.js 3:15-20 (skipped side-effect-free modules)
+[3] ./foo.js + 2 modules 277 bytes {0} [built]
+    import() ./foo [5] ./main.js 6:0-15
+    | ./components/src/index.js 84 bytes [built]
+    |     [only some exports used: CompA]
+    | ./foo.js 101 bytes [built]
+    |     import() ./foo [5] ./main.js 6:0-15
+    | ./components/src/CompAB/index.js 87 bytes [built]
+    |     [only some exports used: CompA]
+    |     harmony side effect evaluation ./CompAB  ./components/src/index.js 1:0-40
+    |     harmony export imported specifier ./CompAB  ./components/src/index.js 1:0-40
+    |     harmony export imported specifier ./CompAB  ./components/src/index.js 1:0-40
+[4] ./components/src/CompC/index.js 34 bytes [built]
     [no exports used]
-    harmony side effect evaluation ./CompC [6] ./components/src/CompC/index.js 1:0-34
-    harmony export imported specifier ./CompC [6] ./components/src/CompC/index.js 1:0-34
-[6] ./components/src/CompC/index.js 34 bytes [built]
+    harmony side effect evaluation ./CompC [3] ./foo.js + 2 modules 2:0-43
+    harmony export imported specifier ./CompC [3] ./foo.js + 2 modules 2:0-43
+[5] ./main.js 144 bytes {1} [built]
+    single entry ./main.js  main
+[6] ./components/src/CompC/CompC.js 33 bytes [built]
     [no exports used]
-    harmony side effect evaluation ./CompC [2] ./components/src/index.js 2:0-43
-    harmony export imported specifier ./CompC [2] ./components/src/index.js 2:0-43
-[7] ./components/src/CompAB/index.js 87 bytes [built]
-    [no exports used]
-    harmony side effect evaluation ./CompAB [2] ./components/src/index.js 1:0-40
-    harmony export imported specifier ./CompAB [2] ./components/src/index.js 1:0-40
-    harmony export imported specifier ./CompAB [2] ./components/src/index.js 1:0-40"
+    harmony side effect evaluation ./CompC [4] ./components/src/CompC/index.js 1:0-34
+    harmony export imported specifier ./CompC [4] ./components/src/CompC/index.js 1:0-34"
 `;
 
 exports[`StatsTestCases should print correct stats for side-effects-simple-unused 1`] = `
